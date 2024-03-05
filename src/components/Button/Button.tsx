@@ -1,11 +1,13 @@
-const Button = () => {
-  function currentNumber(num: number, str: string): void {
-    console.log(num, str);
-  }
+type ButtonProps = { backgroundColor: string; fontSize: number; bool: boolean };
 
+export default function Button({
+  backgroundColor,
+  fontSize,
+  bool,
+}: ButtonProps) {
   return (
-    <button onClick={() => currentNumber(15, "Sohibjon")}>Click me</button>
+    <div>
+      <button>{bool && `Click me ${backgroundColor} ${fontSize}`}</button>
+    </div>
   );
-};
-
-export default Button;
+}
